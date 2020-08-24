@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/scrollingFragment">
+    <fragment
+        android:id="@+id/scrollingFragment"
+        android:name="ru.spliterash.newsapiviewer.fragments.ScrollingFragment"
+        android:label="ScrollingFragment"
+        tools:layout="@layout/scrolling_fragment">
+        <action
+            android:id="@+id/action_scrollingFragment_to_newsFragment"
+            app:destination="@id/newsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="ru.spliterash.newsapiviewer.fragments.NewsFragment"
+        android:label="NewsFragment"
+        tools:layout="@layout/article">
+        <argument
+            android:name="article"
+            app:argType="ru.spliterash.newsapiviewer.datamodels.NewsApiResponse$Article" />
+    </fragment>
+</navigation>
