@@ -7,3 +7,5 @@
 * Retrofit - Асинхронные запросы на сервер
 * Gson - Десериализация JSON ответа сервера
 * Glide - Загрузка изображений
+
+Скачать - [YandexDisc](https://disk.yandex.ru/client/disk/Android)
