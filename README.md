@@ -8,4 +8,4 @@
 * Gson - Десериализация JSON ответа сервера
 * Glide - Загрузка изображений
 
-Скачать - [YandexDisc](https://disk.yandex.ru/client/disk/Android)
+Скачать - [YandexDisc](https://yadi.sk/d/xIJbIlfwMeBmSg)
