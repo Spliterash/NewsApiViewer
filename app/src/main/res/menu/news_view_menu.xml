@@ -4,6 +4,6 @@
 
     <item
         android:icon="@drawable/ic_baseline_public_24"
-        android:title="Открыть"
+        android:title="@string/open"
         app:showAsAction="ifRoom" />
 </menu>

@@ -7,6 +7,7 @@
     <string name="offline_title">Нет подключения</string>
     <string name="offline_message">В данный момент не удаётся установить подключение к серверу</string>
     <string name="close_button">Закрыть</string>
+    <string name="open">Открыть</string>
     <plurals name="hours">
         <item quantity="zero">%1$d часов</item>
         <item quantity="one">%1$d час</item>
