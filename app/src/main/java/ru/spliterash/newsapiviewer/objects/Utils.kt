@@ -1,16 +1,7 @@
 package ru.spliterash.newsapiviewer.objects
 
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
-import android.view.View
-import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.ImageViewTarget
-import kotlinx.android.synthetic.main.article.view.*
 import ru.spliterash.newsapiviewer.MainActivity
 import ru.spliterash.newsapiviewer.R
-import ru.spliterash.newsapiviewer.datamodels.NewsApiResponse
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.floor
@@ -50,36 +41,6 @@ class Utils private constructor() {
             if (spaceIndex == -1)
                 return subText
             return "${subText.substring(0, spaceIndex)}..."
-        }
-
-        fun fillArticle(article: NewsApiResponse.Article, view: View, cropText: Boolean) {
-            view.apply {
-                title.text = article.title
-                description.text =
-                    if (cropText) article.cropDescription(100) else article.description
-                date.text = article.howLongAgo()
-                val factor = view.context.resources.displayMetrics.density
-                imageView.layoutParams.height = (factor * 80).toInt()
-                Glide
-                    .with(context)
-                    .load(article.urlToImage)
-                    .placeholder(
-                        ColorDrawable(
-                            ContextCompat.getColor(
-                                view.context,
-                                R.color.secondary
-                            )
-                        )
-                    )
-                    .into(object : ImageViewTarget<Drawable>(imageView) {
-                        override fun setResource(resource: Drawable?) {
-                            if (resource != null) {
-                                imageView.setImageDrawable(resource)
-                                imageView.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
-                            }
-                        }
-                    })
-            }
         }
     }
 

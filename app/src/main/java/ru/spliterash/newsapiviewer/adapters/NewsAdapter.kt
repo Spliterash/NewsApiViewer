@@ -1,22 +1,14 @@
 package ru.spliterash.newsapiviewer.adapters
 
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.ImageViewTarget
-import kotlinx.android.synthetic.main.article.view.*
 import ru.spliterash.newsapiviewer.R
 import ru.spliterash.newsapiviewer.ResponseManager
 import ru.spliterash.newsapiviewer.datamodels.NewsApiResponse
 import ru.spliterash.newsapiviewer.objects.IOnArticleClick
 import ru.spliterash.newsapiviewer.objects.ListNotify
-import ru.spliterash.newsapiviewer.objects.Utils
-import java.util.function.Consumer
 
 
 class NewsAdapter(
@@ -53,7 +45,7 @@ class NewsAdapter(
         if (holder is ItemVH) {
             val element = list[position] ?: return
             holder.itemView.apply {
-                Utils.fillArticle(element, this, true)
+                element.fillArticle(this,true)
                 setOnClickListener {
                     callback.onClick(element)
                 }

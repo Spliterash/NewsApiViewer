@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.news_view.*
 import ru.spliterash.newsapiviewer.R
-import ru.spliterash.newsapiviewer.objects.Utils
 
 
 class NewsFragment : Fragment(R.layout.news_view) {
@@ -28,6 +27,6 @@ class NewsFragment : Fragment(R.layout.news_view) {
             startActivity(browserIntent)
             true
         }
-        Utils.fillArticle(args.article, view, false)
+        args.article.fillArticle(view, false)
     }
 }
